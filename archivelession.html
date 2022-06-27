@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+		<title></title>
+	</head>
+	<style>
+		html,body{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+		h1,h2,h3,span{
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			text-decoration: none;
+			outline: 0;
+			color: #565656;
+		}
+		.img-wrapper{
+			overflow: hidden;
+			position: relative;
+		}
+		.img-wrapper .img{
+			padding-top: 40%;
+			background-image: url(images/uzp/cover.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			-webkit-filter: blur(5px);
+			filter: blur(5px);
+		}
+		.img-wrapper .mask-img{
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+			background: rgba(0,0,0,.3);
+		}
+		.img-wrapper h1{
+			position: absolute;
+			font-size: 24px;
+			color: #FFF;
+			padding-left: 17px;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			width: 100%;
+			text-shadow: 0 1px 6px rgba(0,0,0,.2);
+			padding-right: 17px;
+			box-sizing: border-box;
+		}
+		.wgt-exp-head .abstract-wp {
+			margin: 17px;
+			line-height: 1.6;
+			overflow: hidden;
+			font-size: 18px;
+			color: #000;
+		}
+		.wgt-exp-head .abstract-wp .big {
+			max-height: initial;
+			overflow: visible;
+		}
+		.wgt-exp-head .abstract {
+			position: relative;
+		}
+		.wgt-exp-head .abstract-wp a {
+			color: #000;
+			display: inline-block;
+			width: -webkit-calc(100vw - 54px);
+			width: calc(100vw - 54px);
+		}
+		.wgt-exp-tool {
+			border-bottom: 0!important;
+		}
+		.content-box {
+			margin-bottom: 8.5px;
+			border-bottom: 1px solid #eee;
+			background: #fff;
+			-webkit-tap-highlight-color: transparent;
+		}
+		.wgt-exp-tool header {
+			position: relative;
+			padding-bottom: 0;
+		}
+		.content-box header {
+			padding: 17px;
+		}
+		.wgt-exp-tool header h3 {
+			font-size: 20px;
+			color: #000;
+			line-height: 20px;
+		}
+		.wgt-exp-tool .wp {
+			line-height: 1.6;
+			overflow: hidden;
+			margin-left: 17px;
+			margin-right: 17px;
+			vertical-align: middle;
+			height: 32px;
+		}
+		.wgt-exp-tool .wp span {
+			margin-right: 28px;
+			font-size: 18px;
+			color: #000;
+		}
+		.wgt-exp-tool .tool-line {
+			width: -webkit-calc(100vw - 34px);
+			width: calc(100vw - 34px);
+			height: 1px;
+			background: #eee;
+			margin: 0 auto;
+			margin-top: 17px;
+		}
+		.wgt-exp-content {
+			line-height: 1.44;
+			margin-bottom: 17px;
+			border: 0;
+		}
+		.wgt-exp-content header {
+			padding-bottom: 10px;
+			padding-top: 13px;
+		}
+		.content-box header {
+			padding: 17px;
+			position: relative;
+		}
+		.wgt-exp-content h3 {
+			font-size: 20px;
+			color: #000;
+		}
+		.content-box h3 {
+			line-height: 1;
+		}
+		.wgt-exp-content .block-ol {
+			padding-bottom: 30px;
+		}
+		.wgt-exp-content .block-item {
+			position: relative;
+			display: block;
+			padding: 0 17px;
+			min-height: 23px;
+			font-size: 18px;
+			color: #333;
+			line-height: 28px;
+		}
+		.wgt-exp-content .block-item-header-fix {
+			display: block;
+			margin-top: 0;
+			position: fixed;
+			width: 100%;
+			top: 0;
+			height: 43px;
+			line-height: 43px;
+			background: #fff;
+			z-index: 1000;
+			margin-left: -17px;
+		}
+		.wgt-exp-content .block-item-header-fix .counter {
+			margin-left: 17px;
+			margin-top: 10px;
+			display: inline-block;
+		}
+		.wgt-exp-content .block-ol .counter {
+			position: relative;
+		}
+		.wgt-exp-content .counter {
+			line-height: 20px;
+			font-size: 18px;
+			color: #3F3F3F;
+			color: #999;
+		}
+		.wgt-exp-content .green {
+			color: #4DB93B;
+		}
+		.wgt-exp-content .block-item .text-container {
+			margin-top: 12px;
+		}
+		.wgt-exp-content .block-ol p {
+			font-size: 18px;
+			color: #333;
+			line-height: 28px;
+		}
+		.wgt-exp-content .exp-img-opt {
+			margin-top: 12px;
+			padding: 0 17px;
+			overflow: hidden;
+			position: relative;
+		}
+		.wgt-exp-content .exp-img-opt .exp-img-opt-img {
+			width: 100%;
+			display: block;
+		}
+		.wgt-notice {
+			padding-bottom: 17px;
+			border: 0;
+			background: #fff;
+		}
+		
+		.wgt-notice header h3 {
+			font-family: PingFangSC-Medium;
+			font-size: 18px;
+			color: #000;
+		}
+		.wgt-notice .notice-container.notice-big {
+			max-height: initial;
+			overflow: visible;
+		}
+		.wgt-notice .notice-container {
+			padding: 0 17px;
+			font-size: 16px;
+			color: #333;
+		}
+	</style>
+	<body>
+		<div style="width: 100%;height: 100%;">
+			<div class="wgt-exp-head">
+				<div class="img-wrapper">
+					<div class="img"></div>
+					<div class="mask-img" style="height: 154.141px;"></div>
+					<h1 class="exp-title">
+						iOS设备必备工具“解压专家”使用教程。
+					</h1>
+				</div>
+				<div id="abstract-wp" class="abstract-wp big">
+					<div id="abstract" class="abstract">
+						<a style=" width: 100%;line-height: 1.6;">
+							解压专家软件是一款专注于快捷解压和压缩文件的管理工具！这是非常快捷和非常好用的zip文件管理App，这里做个简单的介绍教程。
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id="wgt-exp-tool" class="wgt-exp-tool content-box">
+				<header>
+					<h3>
+					工具/原料
+					</h3>
+				</header>
+				<div class="wp">
+					<div class="wp-inner">
+						<span>
+						iOS解压专家软件
+						</span>
+						<span>
+						压缩文件
+						</span>
+					</div>
+				</div>
+				<div class="tool-line"></div>
+			</div>
+			<div class="wgt-exp-content content-box">
+				<header>
+					<h3>
+						方法/步骤
+					</h3>
+				</header>
+				<div class="body">
+					<div class="block-ol " data-index="0">
+						<a class="block-item">
+							<div class="block-item-header">
+								<span class="counter">
+									<span class="green">1</span>
+									/6
+								</span>
+							</div>
+							<div class="text-container ">
+                                <p>导入需要解压或压缩的文件，在微信中打开，别的App基本类似。只要能找到“用其它应用打开”的窗口，那就都能导入到解压专家，文件越大导入越慢，点击导入后等待自动跳转到大象解压(如果导入失败请检查手机内存是否充足，另外保持屏幕常亮)。</p>
+								<!-- <p>导入需要解压或压缩的文件，这里我们使用微信做演示，别的App基本类似。只要能找到“用其它应用打开”的窗口，那就都能导入到解压专家，<span style="color:red;">文件越大导入越慢，点击导入后等待自动跳转到解压专家(如果导入失败请检查手机内存是否充足，另外保持屏幕常亮，如果发现导入失败但已经占用手机内存，请在设置页面清理内存然后再重新导入)</span>，百度网盘因为无法导出文件，所以需要导出百度网盘的请查看我们另外一篇教程。</p> -->
+							</div>
+						</a>
+                        <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/1.PNG">
+                        </div>  
+                        <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/2.PNG">
+						</div>    
+						<div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/03.PNG">
+                        </div>  
+                        <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/3.PNG">
+						</div> 
+						<div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/4.PNG">
+                        </div>  
+                        <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/5.PNG">
+						</div>       
+						                
+					</div>
+					<div class="block-ol " data-index="1">
+						<a class="block-item">
+							<div class="block-item-header">
+								<span class="counter">
+									<span class="green">2</span>
+									/6
+								</span>
+							</div>
+							<div class="text-container ">
+								<p>点击每个文件可以进行文件重命名，复制，移动，删除文件操作，还可以压缩，解压，分享等功能。</p>
+							</div>
+						</a>
+					    <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/6.PNG">
+						</div>                      
+					</div>				
+					<div class="block-ol " data-index="3">
+						<a class="block-item">
+							<div class="block-item-header">
+								<span class="counter">
+									<span class="green">3</span>
+									/6
+								</span>
+							</div>
+								<div class="text-container ">
+								<p>点击底部+按钮可以在当前路径创建文件或文件夹等，可以导入或拍摄图片，录制语音文件，也可以打开文件/iCloud导入系统文件。</p>
+							</div>
+						</a>
+						<div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/7.PNG">
+						</div>                          
+							
+					</div>
+					<div class="block-ol " data-index="4">
+						<a class="block-item">
+							<div class="block-item-header">
+								<span class="counter">
+									<span class="green">4</span>
+									/6
+								</span>
+							</div>
+							<div class="text-container ">
+								<p>对于正常文件我们可以使用压缩功能，点击压缩功能会弹出多种格式的压缩方式。也可以使用密码压缩，这样更能保护你的文件安全。</p>
+							</div>
+						</a>
+					    <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/8.PNG">
+						</div>                      
+					</div>
+					<div class="block-ol " data-index="5">
+						<a class="block-item">
+							<div class="block-item-header">
+								<span class="counter">
+									<span class="green">5</span>
+									/6
+								</span>
+							</div>
+							<div class="text-container ">
+								<p>可以对文件的查看模式，文件排序，文件过滤器。</p>
+							</div>
+						</a>
+					    <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/12.PNG">
+						</div>                      
+					</div>
+					<div class="block-ol " data-index="6">
+						<a class="block-item">
+							<div class="block-item-header">
+								<span class="counter">
+									<span class="green">6</span>
+									/6
+								</span>
+							</div>
+							<div class="text-container ">
+								<p>点击主页面左侧的按钮进入更多菜单界面，文件传输常用到的WiFi传输。</p>
+							</div>
+						</a>
+					    <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/10.PNG">
+                        </div> 
+                        <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/uzp/11.PNG">
+						</div>                     
+					</div>
+					
+					
+				</div>
+			</div>
+			<div class="wgt-notice content-box">
+				<header id="header" class="hide-notice">
+					<h3>
+						注意事项
+					</h3>
+				</header>
+				<div class="notice-container notice-big" id="notice-container">
+					遇到任何问题可以在App的用户反馈界面提问。我们有专业的客服为你解答任何疑问。
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
