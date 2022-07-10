@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+		<title></title>
+	</head>
+	<style>
+		html,body{
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+		}
+		h1,h2,h3,span{
+			margin: 0;
+			padding: 0;
+		}
+		a {
+			text-decoration: none;
+			outline: 0;
+			color: #565656;
+		}
+		.img-wrapper{
+			overflow: hidden;
+			position: relative;
+		}
+		.img-wrapper .img{
+			padding-top: 40%;
+			background-image: url(images/doc/cover.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			-webkit-filter: blur(5px);
+			filter: blur(5px);
+		}
+		.img-wrapper .mask-img{
+			position: absolute;
+			width: 100%;
+			top: 0;
+			left: 0;
+			background: rgba(0,0,0,.3);
+		}
+		.img-wrapper h1{
+			position: absolute;
+			font-size: 24px;
+			color: #FFF;
+			padding-left: 17px;
+			top: 50%;
+			-webkit-transform: translateY(-50%);
+			transform: translateY(-50%);
+			width: 100%;
+			text-shadow: 0 1px 6px rgba(0,0,0,.2);
+			padding-right: 17px;
+			box-sizing: border-box;
+		}
+		.wgt-exp-head .abstract-wp {
+			margin: 17px;
+			line-height: 1.6;
+			overflow: hidden;
+			font-size: 18px;
+			color: #000;
+		}
+		.wgt-exp-head .abstract-wp .big {
+			max-height: initial;
+			overflow: visible;
+		}
+		.wgt-exp-head .abstract {
+			position: relative;
+		}
+		.wgt-exp-head .abstract-wp a {
+			color: #000;
+			display: inline-block;
+			width: -webkit-calc(100vw - 54px);
+			width: calc(100vw - 54px);
+		}
+		.wgt-exp-tool {
+			border-bottom: 0!important;
+		}
+		.content-box {
+			margin-bottom: 8.5px;
+			border-bottom: 1px solid #eee;
+			background: #fff;
+			-webkit-tap-highlight-color: transparent;
+		}
+		.wgt-exp-tool header {
+			position: relative;
+			padding-bottom: 0;
+		}
+		.content-box header {
+			padding: 17px;
+		}
+		.wgt-exp-tool header h3 {
+			font-size: 20px;
+			color: #000;
+			line-height: 20px;
+		}
+		.wgt-exp-tool .wp {
+			line-height: 1.6;
+			overflow: hidden;
+			margin-left: 17px;
+			margin-right: 17px;
+			vertical-align: middle;
+			height: 32px;
+		}
+		.wgt-exp-tool .wp span {
+			margin-right: 28px;
+			font-size: 18px;
+			color: #000;
+		}
+		.wgt-exp-tool .tool-line {
+			width: -webkit-calc(100vw - 34px);
+			width: calc(100vw - 34px);
+			height: 1px;
+			background: #eee;
+			margin: 0 auto;
+			margin-top: 17px;
+		}
+		.wgt-exp-content {
+			line-height: 1.44;
+			margin-bottom: 17px;
+			border: 0;
+		}
+		.wgt-exp-content header {
+			padding-bottom: 10px;
+			padding-top: 13px;
+		}
+		.content-box header {
+			padding: 17px;
+			position: relative;
+		}
+		.wgt-exp-content h3 {
+			font-size: 20px;
+			color: #000;
+		}
+		.content-box h3 {
+			line-height: 1;
+		}
+		.wgt-exp-content .block-ol {
+			padding-bottom: 30px;
+		}
+		.wgt-exp-content .block-item {
+			position: relative;
+			display: block;
+			padding: 0 17px;
+			min-height: 23px;
+			font-size: 18px;
+			color: #333;
+			line-height: 28px;
+		}
+		.wgt-exp-content .block-item-header-fix {
+			display: block;
+			margin-top: 0;
+			position: fixed;
+			width: 100%;
+			top: 0;
+			height: 43px;
+			line-height: 43px;
+			background: #fff;
+			z-index: 1000;
+			margin-left: -17px;
+		}
+		.wgt-exp-content .block-item-header-fix .counter {
+			margin-left: 17px;
+			margin-top: 10px;
+			display: inline-block;
+		}
+		.wgt-exp-content .block-ol .counter {
+			position: relative;
+		}
+		.wgt-exp-content .counter {
+			line-height: 20px;
+			font-size: 18px;
+			color: #3F3F3F;
+			color: #999;
+		}
+		.wgt-exp-content .green {
+			color: #4DB93B;
+		}
+		.wgt-exp-content .block-item .text-container {
+			margin-top: 12px;
+		}
+		.wgt-exp-content .block-ol p {
+			font-size: 18px;
+			color: #333;
+			line-height: 28px;
+		}
+		.wgt-exp-content .exp-img-opt {
+			margin-top: 12px;
+			padding: 0 17px;
+			overflow: hidden;
+			position: relative;
+		}
+		.wgt-exp-content .exp-img-opt .exp-img-opt-img {
+			width: 100%;
+			display: block;
+		}
+		.wgt-notice {
+			padding-bottom: 17px;
+			border: 0;
+			background: #fff;
+		}
+		
+		.wgt-notice header h3 {
+			font-family: PingFangSC-Medium;
+			font-size: 18px;
+			color: #000;
+		}
+		.wgt-notice .notice-container.notice-big {
+			max-height: initial;
+			overflow: visible;
+		}
+		.wgt-notice .notice-container {
+			padding: 0 17px;
+			font-size: 16px;
+			color: #333;
+		}
+	</style>
+	<body>
+		<div style="width: 100%;height: 100%;">
+			<div class="wgt-exp-head">
+				<div class="img-wrapper">
+					<div class="img"></div>
+					<div class="mask-img" style="height: 504.141px;"></div>
+					<h1 class="exp-title">
+						iOS设备必备工具“文档手机版”微信/QQ导入文件教程。
+					</h1>
+				</div>
+				<div id="abstract-wp" class="abstract-wp big">
+					<div id="abstract" class="abstract">
+						<a style=" width: 100%;line-height: 1.6;">
+                            文档手机版软件是一款专注于在线文档编辑软件，这里做个简单的微信/QQ导入文件教程。
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id="wgt-exp-tool" class="wgt-exp-tool content-box">
+				<header>
+					<h3>
+					工具/原料
+					</h3>
+				</header>
+				<div class="wp">
+					<div class="wp-inner">
+						<span>
+						iOS文档手机版
+						</span>
+						<span>
+						word、excel、ppt文件
+						</span>
+					</div>
+				</div>
+				<div class="tool-line"></div>
+			</div>
+			<div class="wgt-exp-content content-box">
+				<header>
+					<h3>
+						方法/步骤
+					</h3>
+				</header>
+				<div class="body">
+					<div class="block-ol " data-index="0">
+						<a class="block-item">
+							<div class="block-item-header">
+								<span class="counter">
+									<span class="green">1</span>
+									/4
+								</span>
+							</div>
+							<div class="text-container ">
+                                <p>打开文件，点击【...】;如果在其他应用打开文件，点击右上角的【分享】。</p>
+							</div>
+						</a>
+                        <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/doc/1.jpg">
+                        </div>
+					</div>
+					<div class="block-ol " data-index="1">
+						<a class="block-item">
+							<div class="block-item-header">
+								<span class="counter">
+									<span class="green">2</span>
+									/4
+								</span>
+							</div>
+							<div class="text-container ">
+								<p>点击【用其他应用打开】</p>
+							</div>
+						</a>
+					    <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/doc/2.jpg">
+						</div>                      
+					</div>				
+					<div class="block-ol " data-index="3">
+						<a class="block-item">
+							<div class="block-item-header">
+								<span class="counter">
+									<span class="green">3</span>
+									/4
+								</span>
+							</div>
+								<div class="text-container ">
+								<p>点击【更多】</p>
+							</div>
+						</a>
+						<div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/doc/3.jpg">
+						</div>                          
+							
+					</div>
+					<div class="block-ol " data-index="4">
+						<a class="block-item">
+							<div class="block-item-header">
+								<span class="counter">
+									<span class="green">4</span>
+									/4
+								</span>
+							</div>
+							<div class="text-container ">
+								<p>点击【文档手机版】，即可编辑文件</p>
+							</div>
+						</a>
+					    <div class="exp-img-opt" style="max-height: unset !important;">             
+							<img class="exp-img-opt-img" src="images/doc/4.jpg">
+						</div>                      
+					</div>
+				</div>
+			</div>
+			<div class="wgt-notice content-box">
+				<header id="header" class="hide-notice">
+					<h3>
+						注意事项
+					</h3>
+				</header>
+				<div class="notice-container notice-big" id="notice-container">
+					遇到任何问题可以在App的用户反馈界面提问。我们有专业的客服为你解答任何疑问。
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
